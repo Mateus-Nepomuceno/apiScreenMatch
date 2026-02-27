@@ -94,10 +94,10 @@ public class Episodio {
 
     @Override
     public String toString() {
-        return  "temporada=" + temporada +
-                ", titulo='" + titulo + '\'' +
-                ", numero=" + numero +
-                ", avaliacao=" + avaliacao +
-                ", dataLancamento=" + dataLancamento;
+        return  "Temporada: " + temporada +
+                ", Titulo: " + titulo +
+                ", Numero: " + numero +
+                ", Avaliação: " + avaliacao +
+                ", Data Lançamento: " + dataLancamento;
     }
 }
