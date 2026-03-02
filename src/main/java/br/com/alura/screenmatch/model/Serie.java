@@ -1,6 +1,6 @@
 package br.com.alura.screenmatch.model;
 
-import br.com.alura.screenmatch.service.ConsultaMyMemory;
+import br.com.alura.screenmatch.service.ConsultaGemini;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class Serie {
 
     public Serie(DadosSerie dadosSerie) {
         this.atores = dadosSerie.atores();
-        this.sinopse = ConsultaMyMemory.obterTraducao(dadosSerie.sinopse()).trim();
+        this.sinopse = ConsultaGemini.obterTraducao(dadosSerie.sinopse()).trim();
         this.capa = dadosSerie.capa();
         this.genero = Categoria.fromString(dadosSerie.genero().split(",")[0].trim());
         this.avaliacao = OptionalDouble.of(Double.parseDouble(dadosSerie.avaliacao())).orElse(0.0);
