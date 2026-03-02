@@ -46,6 +46,15 @@ public class SerieService {
         return null;
     }
 
+    public List<EpisodioDTO> obterTop5Episodios(Long id) {
+        Optional<Serie> serie = repositorio.findById(id);
+        if (serie.isPresent()) {
+            Serie s = serie.get();
+            return converteDadosEpisodio(repositorio.topEpisodiosPorSerie(s));
+        }
+        return null;
+    }
+
     public List<EpisodioDTO> obterTodasTemporadas(Long id) {
         Optional<Serie> serie = repositorio.findById(id);
         if (serie.isPresent()) {
